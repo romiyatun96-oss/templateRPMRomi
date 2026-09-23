@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Rencana Pembelajaran - SMP Muhammadiyah 2 Depok</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'navy': '#0F265C',
+                        'navy-light': '#1a3b85',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for better look in textareas */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        
+        /* Hide scrollbar for number inputs */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center py-8 font-sans text-gray-800">
+
+    <!-- Mobile Device Mockup Container -->
+    <div class="bg-white w-full max-w-md rounded-[2.5rem] shadow-2xl overflow-hidden relative border-[8px] border-gray-100 flex flex-col h-[90vh] max-h-[850px]">
+        
+        <!-- Header Section -->
+        <div class="bg-navy text-white pt-8 pb-10 px-6 rounded-b-[2rem] shadow-md flex-shrink-0 z-10 relative">
+            <div class="flex items-center gap-3 mb-6">
+                <!-- SVG Logo Placeholder (Matahari Muhammadiyah style) -->
+                <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center border border-white/20">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L13.5 5.5L17.5 4.5L16.5 8.5L20 10.5L17 13L19.5 17L15.5 16L13.5 19.5L12 16L10.5 19.5L8.5 16L4.5 17L7 13L4 10.5L7.5 8.5L6.5 4.5L10.5 5.5L12 2ZM12 7C9.24 7 7 9.24 7 12C7 14.76 9.24 17 12 17C14.76 17 17 14.76 17 12C17 9.24 14.76 7 12 7Z"/>
+                    </svg>
+                </div>
+                <h1 class="font-semibold text-lg tracking-wide">SMP Muhammadiyah 2 Depok</h1>
+            </div>
+            
+            <div class="text-center">
+                <h2 class="text-2xl font-bold leading-tight mb-1">Buat Rencana<br>Pembelajaran Mendalam</h2>
+                <p class="text-white/80 text-sm font-medium">Kurikulum Merdeka</p>
+            </div>
+        </div>
+
+        <!-- Form Content Section (Scrollable) -->
+        <div class="flex-1 overflow-y-auto px-5 py-6 bg-white pb-32">
+            <form id="modulForm" class="space-y-6">
+                
+                <!-- 1. IDENTITAS PEMBELAJARAN -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-900 text-[15px] uppercase tracking-wider">1. Identitas Pembelajaran</h3>
+                    
+                    <div class="space-y-2">
+                        <label class="block text-xs font-medium text-gray-600">Judul Topik</label>
+                        <input type="text" value="Teks Deskripsi - Keindahan Alam" class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy transition-colors" required>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-xs font-medium text-gray-600">Nama Sekolah</label>
+                        <div class="relative">
+                            <select class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 appearance-none bg-white focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy">
+                                <option>SMP Muhammadiyah 2 Depok</option>
+                                <option>Sekolah Lainnya</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="space-y-2">
+                            <label class="block text-xs font-medium text-gray-600">Fase</label>
+                            <input type="text" value="D" class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 bg-gray-50 focus:outline-none text-center" readonly>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-xs font-medium text-gray-600">Kelas</label>
+                            <div class="relative">
+                                <select class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 appearance-none bg-white focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy">
+                                    <option>VII</option>
+                                    <option>VIII</option>
+                                    <option>IX</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-xs font-medium text-gray-600">Mata Pelajaran</label>
+                        <div class="relative">
+                            <select class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 appearance-none bg-white focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy">
+                                <option>Bahasa Indonesia</option>
+                                <option>Matematika</option>
+                                <option>IPA</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-xs font-medium text-gray-600">Alokasi Waktu</label>
+                        <div class="relative">
+                            <select class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 appearance-none bg-white focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy">
+                                <option>2 JP / 80 Menit</option>
+                                <option>3 JP / 120 Menit</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full h-px bg-gray-200 my-4"></div>
+
+                <!-- 2. CAPAIAN & TUJUAN -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-900 text-[15px] uppercase tracking-wider">2. Capaian & Tujuan</h3>
+                    
+                    <div class="space-y-2">
+                        <label class="block text-xs font-medium text-gray-600">Elemen CP</label>
+                        <div class="relative">
+                            <select class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 appearance-none bg-white focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy">
+                                <option>Membaca dan Memirsa</option>
+                                <option>Menyimak</option>
+                                <option>Berbicara dan Mempresentasikan</option>
+                                <option>Menulis</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-xs font-medium text-gray-600">Tujuan Pembelajaran (TP)</label>
+                        <textarea class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy min-h-[60px] resize-y" rows="2">Peserta didik memahami teks deskripsi melalui pengamatan visual pada media gambar/video.</textarea>
+                    </div>
+                </div>
+
+                <div class="w-full h-px bg-gray-200 my-4"></div>
+
+                <!-- 3. TARGET PESERTA DIDIK -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-900 text-[15px] uppercase tracking-wider">3. Target Peserta Didik</h3>
+                    
+                    <div class="flex gap-3 items-end">
+                        <div class="space-y-2 flex-1">
+                            <label class="block text-xs font-medium text-gray-600">Target</label>
+                            <div class="relative">
+                                <select class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 appearance-none bg-white focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy">
+                                    <option>Reguler</option>
+                                    <option>Cerdas Istimewa</option>
+                                    <option>Kesulitan Belajar</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 flex-1">
+                            <label class="block text-xs font-medium text-gray-600">Jumlah Siswa</label>
+                            <div class="relative">
+                                <input type="number" value="32" class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy pr-20" required>
+                                <div class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none text-gray-500 text-xs">
+                                    Peserta Didik
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full h-px bg-gray-200 my-4"></div>
+
+                <!-- 4. KOMPONEN INTI -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-900 text-[15px] uppercase tracking-wider">4. Komponen Inti</h3>
+                    
+                    <div class="space-y-2">
+                        <label class="block text-xs font-medium text-gray-600">Pemahaman Bermakna</label>
+                        <textarea class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy min-h-[80px] resize-y" rows="3">Peserta didik menyadari pentingnya mengamati lingkungan sekitar secara detail untuk dideskripsikan secara visual agar pembaca seolah-olah melihatnya langsung.</textarea>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-xs font-medium text-gray-600">Pertanyaan Pemantik</label>
+                        <textarea class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy min-h-[60px] resize-y" rows="2">Apa tempat favorit kalian untuk dikunjungi di kota Depok? Ceritakan suasananya!</textarea>
+                    </div>
+                </div>
+
+                <div class="w-full h-px bg-gray-200 my-4"></div>
+
+                <!-- 5. PROFIL PELAJAR PANCASILA -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-900 text-[15px] uppercase tracking-wider">5. Profil Pelajar Pancasila</h3>
+                    
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" checked class="form-checkbox h-4 w-4 text-navy rounded border-gray-300 focus:ring-navy">
+                            <span class="text-gray-700">Mandiri</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" checked class="form-checkbox h-4 w-4 text-navy rounded border-gray-300 focus:ring-navy">
+                            <span class="text-gray-700">Bernalar Kritis</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" class="form-checkbox h-4 w-4 text-navy rounded border-gray-300 focus:ring-navy">
+                            <span class="text-gray-700">Kreatif</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" class="form-checkbox h-4 w-4 text-navy rounded border-gray-300 focus:ring-navy">
+                            <span class="text-gray-700">Gotong Royong</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer col-span-2">
+                            <input type="checkbox" checked class="form-checkbox h-4 w-4 text-navy rounded border-gray-300 focus:ring-navy">
+                            <span class="text-gray-700">Beriman, Bertakwa kepada Tuhan YME, dan Berakhlak Mulia</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer col-span-2">
+                            <input type="checkbox" class="form-checkbox h-4 w-4 text-navy rounded border-gray-300 focus:ring-navy">
+                            <span class="text-gray-700">Berkebinekaan Global</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="w-full h-px bg-gray-200 my-4"></div>
+
+                <!-- 6. SKENARIO PEMBELAJARAN -->
+                <div class="space-y-3">
+                    <h3 class="font-bold text-gray-900 text-[15px] uppercase tracking-wider">6. Skenario Pembelajaran</h3>
+                    
+                    <div class="space-y-2">
+                        <label class="flex justify-between text-xs font-medium text-gray-600">
+                            <span>Pendahuluan</span>
+                            <span>(10 Menit)</span>
+                        </label>
+                        <input type="text" value="Guru menyapa, berdoa, apersepsi topik, menyampaikan tujuan" class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="flex justify-between text-xs font-medium text-gray-600">
+                            <span>Kegiatan Inti</span>
+                            <span>(60 Menit)</span>
+                        </label>
+                        <textarea class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy min-h-[100px] resize-y" rows="4">• Mengamati gambar alam/tempat wisata di Depok (10')
+• Diskusi kelompok menentukan objek deskripsi (20')
+• Menulis draf teks deskripsi secara mandiri (25')
+• Presentasi singkat perwakilan siswa (5')</textarea>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="flex justify-between text-xs font-medium text-gray-600">
+                            <span>Penutup</span>
+                            <span>(10 Menit)</span>
+                        </label>
+                        <input type="text" value="Kesimpulan bersama, refleksi pembelajaran, penugasan membaca" class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy">
+                    </div>
+                </div>
+
+                <div class="w-full h-px bg-gray-200 my-4"></div>
+
+                <!-- 7. MATERI & ASESMEN -->
+                <div class="space-y-3 pb-8">
+                    <h3 class="font-bold text-gray-900 text-[15px] uppercase tracking-wider">7. Materi & Asesmen</h3>
+                    
+                    <div class="space-y-2">
+                        <label class="block text-xs font-medium text-gray-600">Materi Referensi</label>
+                        <input type="text" value="Teks Deskripsi (Buku Cetak B. Indonesia Kelas VII hlm 45-50, PPT)" class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-xs font-medium text-gray-600">Asesmen Formatif (Proses)</label>
+                        <input type="text" value="Lembar observasi keaktifan diskusi dan tanya jawab" class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-xs font-medium text-gray-600">Asesmen Sumatif (Hasil Akhir)</label>
+                        <input type="text" value="Produk Teks Deskripsi tertulis sesuai struktur" class="w-full text-sm border border-gray-300 rounded-lg px-3 py-2.5 focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Fixed Bottom Action Area -->
+        <div class="absolute bottom-0 w-full bg-white border-t border-gray-100 p-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] rounded-b-[2rem]">
+            
+            <div class="flex gap-3 mb-3">
+                <button type="button" class="flex-1 py-2.5 border-2 border-gray-200 text-gray-600 font-bold rounded-xl text-sm tracking-wide hover:bg-gray-50 hover:border-gray-300 transition-colors">
+                    [ BATAL ]
+                </button>
+                <button type="button" class="flex-1 py-2.5 border-2 border-navy text-navy font-bold rounded-xl text-sm tracking-wide hover:bg-navy/5 transition-colors">
+                    [ SIMPAN ]
+                </button>
+            </div>
+            
+            <button id="generateBtn" type="button" class="w-full bg-navy text-white font-bold py-3.5 rounded-xl text-sm tracking-wide hover:bg-navy-light focus:ring-4 focus:ring-blue-100 transition-all flex justify-center items-center gap-2 group">
+                <svg class="w-5 h-5 text-yellow-300 group-hover:animate-spin-slow" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 9L20.5 5.5L24 4L20.5 2.5L19 0L17.5 2.5L14 4L17.5 5.5L19 9ZM11.5 9.5L9 4L6.5 9.5L1 12L6.5 14.5L9 20L11.5 14.5L17 12L11.5 9.5ZM19 15L17.5 18.5L14 20L17.5 21.5L19 25L20.5 21.5L24 20L20.5 18.5L19 15Z"/>
+                </svg>
+                <span>GENERATE RENCANA PEMBELAJARAN</span>
+            </button>
+        </div>
+
+        <!-- Loading Overlay (Hidden by default) -->
+        <div id="loadingOverlay" class="absolute inset-0 bg-white/80 backdrop-blur-sm z-50 hidden flex-col items-center justify-center rounded-[2.5rem]">
+            <div class="relative w-16 h-16">
+                <div class="absolute inset-0 rounded-full border-4 border-gray-200"></div>
+                <div class="absolute inset-0 rounded-full border-4 border-navy border-t-transparent animate-spin"></div>
+                <svg class="absolute inset-0 m-auto w-6 h-6 text-navy animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 9L20.5 5.5L24 4L20.5 2.5L19 0L17.5 2.5L14 4L17.5 5.5L19 9ZM11.5 9.5L9 4L6.5 9.5L1 12L6.5 14.5L9 20L11.5 14.5L17 12L11.5 9.5ZM19 15L17.5 18.5L14 20L17.5 21.5L19 25L20.5 21.5L24 20L20.5 18.5L19 15Z"/>
+                </svg>
+            </div>
+            <p class="mt-4 font-bold text-navy animate-pulse">Menyusun Modul Ajar AI...</p>
+            <p class="text-xs text-gray-500 mt-1">Harap tunggu sebentar</p>
+        </div>
+        
+        <!-- Success Modal (Hidden by default) -->
+        <div id="successModal" class="absolute inset-0 bg-navy/90 backdrop-blur-sm z-50 hidden flex-col items-center justify-center p-6 rounded-[2.5rem]">
+            <div class="bg-white p-6 rounded-2xl w-full max-w-sm text-center shadow-2xl transform scale-95 transition-transform duration-300" id="modalContent">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-500">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <h3 class="font-bold text-xl text-gray-900 mb-2">Modul Ajar Selesai!</h3>
+                <p class="text-gray-600 text-sm mb-6">Rencana Pembelajaran Mendalam berhasil di-generate menggunakan AI dan disimpan ke draft Anda.</p>
+                <button id="closeModalBtn" class="w-full bg-navy text-white font-bold py-3 rounded-xl text-sm tracking-wide hover:bg-navy-light transition-colors">
+                    KEMBALI KE BERANDA
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const generateBtn = document.getElementById('generateBtn');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            const successModal = document.getElementById('successModal');
+            const modalContent = document.getElementById('modalContent');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+
+            generateBtn.addEventListener('click', () => {
+                // Tampilkan loading overlay
+                loadingOverlay.classList.remove('hidden');
+                loadingOverlay.classList.add('flex');
+
+                // Simulasi proses API call AI (3 detik)
+                setTimeout(() => {
+                    // Sembunyikan loading
+                    loadingOverlay.classList.add('hidden');
+                    loadingOverlay.classList.remove('flex');
+                    
+                    // Tampilkan pesan sukses
+                    successModal.classList.remove('hidden');
+                    successModal.classList.add('flex');
+                    
+                    // Efek pop in untuk modal
+                    setTimeout(() => {
+                        modalContent.classList.remove('scale-95');
+                        modalContent.classList.add('scale-100');
+                    }, 10);
+                }, 2500);
+            });
+
+            closeModalBtn.addEventListener('click', () => {
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+                
+                setTimeout(() => {
+                    successModal.classList.add('hidden');
+                    successModal.classList.remove('flex');
+                    
+                    // Reset form to top
+                    const formContainer = document.querySelector('.overflow-y-auto');
+                    formContainer.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 200);
+            });
+            
+            // Animasi lambat untuk SVG bintang
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes spin-slow {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                }
+                .animate-spin-slow {
+                    animation: spin-slow 3s linear infinite;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
